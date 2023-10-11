@@ -723,6 +723,7 @@ h3.sc-right-title {
   }
   #header-area.active .mobile-menu {
     display: block !important;
+    overflow-y: auto;
   }
   #header-area.active .btn-menu, #header-area.active .logo-box {
     display: none;

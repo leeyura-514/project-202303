@@ -342,6 +342,7 @@
     }
     .mobile-menu {
       display: block!important;
+      overflow-y: auto;
     }
     .btn-menu, .logo-box {
       display: none;
