@@ -666,9 +666,6 @@ h3.sc-right-title {
     background: url("../../images/04_img/mobile/ico_x_b.png") no-repeat center;
     background-size: contain;
   }
-  #gnb {
-    margin-top: 1.6rem;
-  }
   #gnb .list-gnb {
     flex-direction: column;
   }
@@ -684,12 +681,12 @@ h3.sc-right-title {
   }
   .mobile-menu {
     display: none !important;
-    height: 100vh;
+    height: calc(100vh - 5.8rem);
     padding: 0 16px;
     position: relative;
   }
   .mobile-bottom {
-    margin-top: 12.6rem;
+    margin-top: 1.6rem;
   }
   .mobile-bottom strong {
     font-weight: 700;

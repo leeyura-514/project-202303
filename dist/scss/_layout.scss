@@ -277,7 +277,6 @@
     }
   }
   #gnb {
-    margin-top: 1.6rem;
     .list-gnb {
       flex-direction: column;
       li {
@@ -296,12 +295,12 @@
   }
   .mobile-menu {
     display: none!important;
-    height: 100vh;
+    height: calc(100vh - 5.8rem);
     padding: 0 16px;
     position: relative;
   }
   .mobile-bottom {
-    margin-top: 12.6rem;
+    margin-top: 1.6rem;
     strong {
       font-weight: 700;
     }
