@@ -1,0 +1,245 @@
+// variable
+$current-width: 1440px;
+$mobile-width: 320px;
+$tablet-width: 768px;
+$tablet-large-width: 820px;
+$laptop-width: 1024px;
+$desktop-width: 1440px;
+$nkTitle: 'YouandiNewKrTitle';
+$sansNeo: 'SpoqaHanSansNeo';
+$white: #fff;
+$blue: #0070F0;
+
+// mixin
+@mixin mobile {
+  @media (max-width: #{$laptop-width - 1px}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$laptop-width - 1px}) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (min-width: #{$laptop-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+//font
+@mixin font-48 {
+	font-size: 4.8rem;
+	@media (max-width: #{$laptop-width - 1px}) {
+    font-size: 2.8rem;
+  }
+}
+@mixin font-34 {
+	font-size: 3.4rem;
+	@media (max-width: #{$laptop-width - 1px}) {
+    font-size: 2rem;
+  }
+}
+@mixin font-24 {
+	font-size: 2.4rem;
+	@media (max-width: #{$laptop-width - 1px}) {
+    font-size: 1.3rem;
+  }
+}
+@mixin font-20 {
+	font-size: 2rem;
+	@media (max-width: #{$laptop-width - 1px}) {
+    font-size: 1.2rem;
+  }
+}
+@mixin font-18 {
+	font-size: 1.8rem;
+	@media (max-width: #{$laptop-width - 1px}) {
+    font-size: 1.2rem;
+  }
+}
+@mixin font-16 {
+	font-size: 1.6rem;
+}
+@mixin font-14 {
+	font-size: 1.4rem;
+}
+@mixin font-12 {
+	font-size: 1.2rem;
+}
+
+// col
+@mixin col-2 {
+	flex: calc(100% / 6);
+	max-width: calc(100% / 8 - 1.5rem);
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+		margin-bottom: 2rem;
+	}
+	@include laptop {
+		flex: calc(100% / 2);
+		flex-wrap: wrap;
+		max-width: calc(100% / 2 - 1rem);
+		margin-bottom: 2rem;
+	}
+}
+@mixin col-3 {
+	flex: calc(100% / 4);
+	max-width: calc(100% / 4 - 1.5rem);
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+		margin-bottom: 2rem;
+	}
+	@include laptop {
+		flex: calc(100% / 2);
+		flex-wrap: wrap;
+		max-width: calc(100% / 2 - 1rem);
+		margin-bottom: 2rem;
+	}
+}
+@mixin col-4 {
+	flex: calc(100% / 3);
+	max-width: calc(100% / 3 - 1.5rem);
+	margin-bottom: 2rem;
+	&:nth-child(n + 4) {
+		margin-bottom: 0rem;
+	}
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+		margin-bottom: 1rem;
+	}
+	@include laptop {
+		flex: calc(100% / 3);
+		max-width: calc(100% / 3 - 1.5rem);
+		margin-bottom: 1rem;
+	}
+}
+@mixin col-6 {
+	flex: calc(100% / 2);
+	max-width: calc(100% / 2 - 1rem);
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+		margin-bottom: 2rem;
+	}
+	@include tablet {
+		flex: calc(100% / 2);
+		max-width: calc(100% / 2 - 1rem);
+		margin-bottom: 2rem;
+	}
+}
+@mixin col-8 {
+	flex: calc(100% / 1.5);
+	max-width: calc(100% / 1.5 - 1rem);
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+		margin-bottom: 2rem;
+	}
+}
+@mixin col-9 {
+	flex: calc(75%);
+	max-width: calc(75% - 1rem);
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+		margin-bottom: 2rem;
+	}
+}
+@mixin col-10 {
+	flex: calc(100% / 12 * 10);
+	max-width: calc(100% / 12 * 10 - 1rem);
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+		margin-bottom: 2rem;
+	}
+}
+@mixin col-12 {
+	flex: 100%;
+	max-width: 100%;
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+		margin-bottom: 2rem;
+	}
+}
+
+// component 
+@mixin content-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@content;
+}
+@mixin vertical-center {
+	display: flex;
+	align-items: center;
+	@content;
+}
+@mixin horizon-center {
+	display: flex;
+	justify-content: center;
+	@content;
+}
+@mixin flex-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+@mixin flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+@mixin position-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+@mixin text-ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+//component-css
+@mixin control-btn {
+	.btn {
+		display: none;
+		width: 20px;
+		height: 10px;
+		margin-right: 4px;
+		border-radius: 10px;
+		&.play {
+			background: url('../../images/04_img/web/play_btn-play.png') no-repeat center #000;
+			background-size: 6px 6px;
+		}
+		&.pause {
+			background: url('../../images/04_img/web/play_btn-pause.png') no-repeat center #000;
+			background-size: 6px 6px;
+		}
+		&.on {
+			display: block;
+		}
+	}
+	@content;
+}
+@mixin swiper-pagi {
+	.swiper-pagination-bullet {
+		&.swiper-pagination-bullet-active {
+			background-color: #000;
+		}
+	}
+	@content;
+}
+

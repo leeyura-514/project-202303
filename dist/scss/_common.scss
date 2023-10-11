@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'YouandiNewKrTitle';
+  src: url('../../fonts/YouandiNewKrTitle-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'YouandiNewKrTitle';
+  src: url('../../fonts/YouandiNewKrTitle-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'SpoqaHanSansNeo';
+  src: url('../../fonts/SpoqaHanSansNeo-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'SpoqaHanSansNeo';
+  src: url('../../fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'SpoqaHanSansNeo';
+  src: url('../../fonts/SpoqaHanSansNeo-Medium.ttf') format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'SpoqaHanSansNeo';
+  src: url('../../fonts/SpoqaHanSansNeo-Bold.ttf') format('truetype');
+  font-weight: 800;
+}
+
+/* font styles */
+html, body {
+  font-size: 62.5%;
+	font-family: 'YouandiNewKrTitle', sans-serif;
+}
+body {
+  scroll-behavior: smooth;
+  &.scroll-hidden {
+    overflow: hidden;
+  }
+}
+div {
+  @include font-16;
+}
+
+/* common styles */
+.blind {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+}
+.common-inner {
+  width: 1600px;
+	max-width: 1600px;
+  height: 100%;
+	margin: 0 auto;
+}
+.flex-container {
+  display: flex;  
+  .flex-column {
+    display: flex;
+    width: 100%;
+    .col-3 {
+      @include col-3;
+    }
+    .col-4 {
+      @include col-4;
+    }
+    .col-6 {
+      @include col-6;
+    }
+    .col-8 {
+      @include col-8;
+    }
+    .col-9 {
+      @include col-9;
+    }
+  }
+}
+
+//component
+.pc-view {
+  display: block;
+}
+.m-view {
+  display: none;
+}
+h2.sc-left-title {
+  @include font-48;
+  font-weight: 700;
+}
+h3.sc-right-title {
+  @include font-24;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.link {
+  @include font-14;
+  font-weight: 700;
+  &.all {
+    display: block;
+    color: $blue;
+    font-family: $sansNeo;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 8px;
+      margin-left: 4px;
+      background-image: url('../../images/04_img/web/ico_arrowB_forward_blue.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &.more, &.signup {
+    @include vertical-center;
+    height: 3rem;
+    line-height: 3rem;
+    color: #000;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 8px;
+      margin-left: 4px;
+      background-image: url('../../images/04_img/web/ico-arrow-forward-4x8.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+

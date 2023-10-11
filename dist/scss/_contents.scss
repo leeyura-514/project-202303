@@ -1,0 +1,375 @@
+// _contents.scss
+#container {
+  padding-top: 16.8rem;
+}
+#wrap {
+  display: flex;
+  justify-content: space-between;
+}
+// 왼쪽 영역
+.left-wrap {
+  width: 1257px;
+  padding-right: 6.3rem;
+  border-right: 1px solid #ccc;
+  section {
+    margin-bottom: 8rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.main-visual {
+  .swiper {
+    position: relative;
+    padding: 1.8rem 0;
+  }
+  .promo-list {
+    @include flex-between;
+    padding: 1.8rem 0;
+    li {
+      transition: .3s cubic-bezier(0.6, 0.1, 0.2, 1);
+      &:first-child img {
+        width: 585px;
+        height: 440px;
+      }
+      &:nth-child(2), &:nth-child(3) {
+        img {
+          width: 281px;
+          height: 440px;
+        }
+      }
+      &:hover {
+        transform: translateY(-12px);
+      }
+      a {
+        display: block;
+        height: 100%;
+      }
+      img {
+        border-radius: 16px;
+      }
+    }
+  }
+  .swiper-button-prev {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: url(../../images/04_img/web/ico-slide-prev.png) no-repeat center;
+    background-size: auto;
+    &::after {
+      content: '';
+    }
+  }
+  .swiper-button-next {
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: url(../../images/04_img/web/ico-slide-next.png) no-repeat center;
+    background-size: auto;
+    &::after {
+      content: '';
+    }
+  }
+  .controls {
+    @include content-center;
+  }
+  .control-play {
+    @include vertical-center;
+    height: 1.6rem;
+    @include control-btn;
+  }
+  .swiper-pagination {
+    display: flex;
+    position: inherit;
+    width: auto;
+    @include swiper-pagi;
+  }
+}
+.card-info {
+  .flex-container .flex-column {
+    justify-content: space-between;
+  }
+  .title-layer {
+    margin-bottom: 4rem;
+    p {
+      margin: 1.6rem 0;
+      font-weight: 400;
+      font-family: $sansNeo;
+    }
+    .link.all {
+      font-weight: 700;
+      font-family: $sansNeo;
+    }
+  }
+  .tag-list {
+    display: flex;
+    flex-direction: column;
+    li + li {
+      margin-top: .8rem;
+    }
+    a {
+      display: inline-block;
+      padding: 0 12px;
+      height: 3rem;
+      line-height: 1.8;
+      border-radius: 15px;
+      border: 1px solid #000;
+      font-size: 1.4rem;
+    }
+  }
+  .card-list {
+    // @@피드백 : 스와이퍼 flex-wrap금지
+    display: flex;
+    justify-content: space-between;
+    li {
+      width: 25%;
+      a {
+        @include content-center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        // width: 10rem;
+        // height: 15.8rem;
+      }
+      .card-box {
+        margin-bottom: 1.6rem;
+      }
+      .card-thumb {
+        overflow: hidden;
+        display: block;
+        border-radius: 4px;
+        // swiper-slide 내부div에만 고정 width줄것
+        width: 10rem;
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
+      p {
+        margin-top: 1.6rem;
+      }
+    }
+  }
+}
+// 오른쪽 영역
+.right-wrap {
+  width: 343px;
+  height: 190rem;
+  padding-left: 6.3rem;
+  margin-top: 4rem;
+  section {
+    margin-bottom: 5.6rem;
+    &:nth-child(3) {
+      margin-bottom: 0;
+    }
+  }
+  .right-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+  }
+  .tab-list {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #E3E3E3;
+    border-radius: 4px;
+    li {
+      @include content-center;
+      width: 50%;
+      height: 4rem;
+      text-align: center;
+      background-color: #F5F5F5;
+      border-right: 1px solid #E3E3E3;
+      @include font-14;
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.30);
+      cursor: pointer;
+      &:last-child {
+        border-right: 0;
+      }
+      &.active {
+        background-color: #fff;
+        color: #000;
+      }
+    }
+  }
+  .tabcontent {
+    display: none
+  }
+  .login-area {
+    .pw-wrap {
+      @include content-center;
+      flex-direction: column;
+      padding: 2.4rem 0 4rem;
+      .pw-txt {
+        line-height: 1.3;
+        text-align: center;
+      }
+      .pw-box {
+        display: flex;
+        margin-top: 3.9rem;
+        .pw {
+          display: flex;
+          width: 16px;
+          height: 16px;
+          background: #E3E3E3;
+          border-radius: 100%;
+          + .pw {
+            margin-left: .8rem;
+          }
+        }
+      }
+    }
+    .btn-inquiry {
+      a {
+        @include content-center;
+        width: 28rem;
+        height: 5.6rem;
+        background-color: #000;
+        border-radius: 8px;
+        font-weight: 700;
+        color: #fff;
+      }
+    }
+    .btn-join {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 4.8rem;
+      .link.signup {
+        display: inline-block;
+      }
+    }
+    .app-text {
+      padding: 2.4rem 0;
+      text-align: center;
+      p {
+        line-height: 1.3;
+      }
+      .time {
+        display: block;
+        color: $blue;
+        margin-top: .8rem;
+        @include font-14;
+        font-weight: 700;
+      }
+    }
+    .qr-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 10.4rem;
+      padding: 0 2.3rem;
+    }
+    .login-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 7.3rem;
+    }
+    .btn-customer {
+      display: flex;
+      width: 100%;
+      height: 4rem;
+      border-radius: 8px;
+      border: 1px solid #000;
+      .btn {
+        width: calc(100% / 3);
+        font-size: 1.4rem;
+        font-weight: 700;
+        &:nth-child(2) {
+          border-left: 1px solid;
+          border-right: 1px solid;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .fin-area {
+    .fin-list {
+      border-radius: 8px;
+      border: 1px solid #000; 
+      li {
+        a {
+          @include horizon-center;
+          flex-direction: column;
+          height: 7.2rem;
+          padding: 0 16px;
+          border-bottom: 1px solid #000;
+          font-family: $sansNeo;
+        }
+        &:last-child a {
+          border-bottom: 0;
+        }
+        strong {
+          display: block;
+          margin-bottom: 3px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .notice-area {
+    .news-list {
+      li {
+        + li {
+          margin-top: .5rem;
+        }
+        a {
+          display: block;
+          width: 95%;
+          height: 2.2rem;
+          line-height: 1.5;
+          @include font-14;
+          font-family: $sansNeo;
+          @include text-ellipsis;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: #D9D9D9;
+        margin: 2.4rem 0;
+      }
+    }
+  }
+  .sec-app {
+    .swiper {
+      padding: 2.4rem 0;
+      position: relative;
+    }
+    a {
+      @include vertical-center;
+    }
+    .app-thumb {
+      display: block;
+      width: 5.6rem;
+      height: 5.6rem;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    .app-desc {
+      margin-left: 1.6rem;
+      line-height: 1.2;
+      font-weight: 500;
+    }
+    .swiper-pagination {
+      position: absolute;
+      bottom: 0;
+      @include swiper-pagi;
+    }
+  }
+}
+
